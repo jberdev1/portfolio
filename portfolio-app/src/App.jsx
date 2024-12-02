@@ -2,7 +2,7 @@ import './App.css'
 import { Provider } from "./components/ui/provider"
 import Simple from './Navbar'
 import { ColorModeProvider, useColorModeValue } from './components/ui/color-mode'
-import {  Box, Center, Heading, Text, VStack, useBreakpointValue } from '@chakra-ui/react'
+import {  Box, Center, Heading, Text, VStack } from '@chakra-ui/react'
 import Profile from './Profile'
 import Background from './background'
 
@@ -32,6 +32,9 @@ function App() {
             color={useColorModeValue('red.50', 'red.400')}>
         <Background/>
       </Box>
+      <Text>
+      Free SVG Background by <a target="_blank" href="https://bgjar.com">BGJar</a>
+      </Text>
       </VStack>
       </ColorModeProvider>
     </Provider>

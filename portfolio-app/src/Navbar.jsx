@@ -45,7 +45,7 @@ NavLink.propTypes = {
 
 
 export default function Simple() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { open, onOpen, onClose } = useDisclosure()
 
   return (
     <>
@@ -55,8 +55,8 @@ export default function Simple() {
             size={'md'}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          >{isOpen ? <IoMdClose /> : <RxHamburgerMenu  />}</IconButton>
+            onClick={open ? onClose : onOpen}
+          >{open ? <IoMdClose /> : <RxHamburgerMenu  />}</IconButton>
           <HStack spacing={8} alignItems={'center'}>
             <Box>Portfolio</Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
@@ -78,7 +78,7 @@ export default function Simple() {
             <ColorModeButton></ColorModeButton>
         </Flex>
 
-        {isOpen ? (
+        {open ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => {
