@@ -5,6 +5,7 @@ import { ColorModeProvider, useColorModeValue } from './components/ui/color-mode
 import {  Box, Center, Heading, Text, VStack } from '@chakra-ui/react'
 import Profile from './Profile'
 import Background from './background'
+import Projects from './Projects'
 
 
 
@@ -32,6 +33,7 @@ function App() {
             color={useColorModeValue('red.50', 'red.400')}>
         <Background/>
       </Box>
+      <Projects/>
       <Text>
       Free SVG Background by <a target="_blank" href="https://bgjar.com">BGJar</a>
       </Text>
