@@ -1,13 +1,14 @@
-import { Box, Center, HStack, IconButton, Image } from "@chakra-ui/react"
+import { Center, HStack, IconButton, Image } from "@chakra-ui/react"
 import { useState } from "react"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import { useColorModeValue } from "./components/ui/color-mode"
 import PropTypes from 'prop-types';
 
 Carousel.propTypes = {
-    cards : PropTypes.array
+    cards : PropTypes.array,
+    dark : PropTypes.bool
 }
-export default function Carousel({cards}){
+export default function Carousel({cards, dark}){
     const [slideIndex, setSlideIndex] = useState(0)
     return <HStack  minH="400px"  width="550px">
         <IconButton aria-label="Go back" bgColor={"transparent"} _hover={{bg: useColorModeValue("gray.400", "gray.400")}} onClick={() => {
@@ -17,7 +18,7 @@ export default function Carousel({cards}){
                     setSlideIndex(slideIndex - 1)
                 }
         }>
-        <IoIosArrowBack color={useColorModeValue("white", "white")} />
+        <IoIosArrowBack color={dark ? "black" : "white"} />
         </IconButton>
         <Center heigth="350px"  width="500px">
 
@@ -34,7 +35,7 @@ export default function Carousel({cards}){
                 setSlideIndex(slideIndex + 1)
             }
             }>
-            <IoIosArrowForward color={useColorModeValue("white", "white")}/>    
+            <IoIosArrowForward color={dark ? "black" : "white"}/>    
         </IconButton>
     </HStack>
 }

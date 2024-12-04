@@ -7,18 +7,23 @@ import {
   IconButton,
   useDisclosure,
   Stack,
+  Button,
+  MenuTrigger,
+  Menu,
+  Separator,
 } from '@chakra-ui/react'
 import PropTypes from 'prop-types';
 import { RxHamburgerMenu  } from "react-icons/rx";
 import { IoMdClose  } from "react-icons/io";
 import { ColorModeButton, useColorModeValue } from './components/ui/color-mode';
 import { MenuContent, MenuItem, MenuRoot, MenuSeparator } from './components/ui/menu';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useState } from 'react';
+import { soundWaveCards } from './cards';
 
 
 
 
-const Links = [
-  {name: 'Mon Profil', to: "/#profile"}, {name: 'Mes Projets', to: "/#projects"}]
 
 const NavLink = (props) => {
   const { children } = props
@@ -47,10 +52,18 @@ NavLink.propTypes = {
 
 export default function Simple() {
   const { open, onOpen, onClose } = useDisclosure()
+  const [subMenuOpen, setSubMenuOpen] = useState(false)
+
+  const projects = [
+    {name: "SoundWave", to: "#soundwave"},
+    {name: "Chat", to: "#chat"},
+    {name: "Carcassonne", to: "#carcassonne"},
+
+  ]
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} py={0} w="100%">
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} py={0} w="100%" id="menu">
         <Flex h={16}  alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -58,35 +71,36 @@ export default function Simple() {
             display={{ md: 'none' }}
             onClick={open ? onClose : onOpen}
           >{open ? <IoMdClose /> : <RxHamburgerMenu  />}</IconButton>
-          <HStack spacing={8} alignItems={'center'}>
+          <HStack gap={6} width="100%" alignItems={'center'}>
             <Box>Portfolio</Box>
-            <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link.name} smooth to={link.to}>{link.name}</NavLink>
-              ))}
+            <Separator orientation={"vertical"} height="4"></Separator>
+
+            <HStack as={'nav'} gap={6} display={{ base: 'none', md: 'flex' }}>
+                <AnchorLink href={"#profile"}>Mon profil</AnchorLink>
+                <Menu.Root>
+                  <MenuTrigger>
+                    <Button>Mes projets</Button>
+                  </MenuTrigger>
+                  <MenuContent >
+                    {projects.map((val, i) => (
+                      <MenuItem _hover={{bgColor: "gray.200"}}>
+                        <AnchorLink value="sw" href={val.to}>{val.name}</AnchorLink>
+                      </MenuItem>)
+                    )}
+                  </MenuContent>
+                </Menu.Root>
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
-            <MenuRoot>
-              <MenuContent>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuSeparator />
-                <MenuItem>Link 3</MenuItem>
-              </MenuContent>
-            </MenuRoot>
-          </Flex>
             <ColorModeButton></ColorModeButton>
         </Flex>
 
         {open ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => {
-                console.log("opened")
-                return (
-                <NavLink key={link.name} smooth to={link.to}>{link.name}</NavLink>
-              )})}
+              <AnchorLink href={"#profile"}>Mon profil</AnchorLink>
+              <AnchorLink _focus={{bgColor:"black"}} href="#menu" onClick={() => {setSubMenuOpen(!subMenuOpen)}}>Mes projets</AnchorLink>
+              {subMenuOpen ? 
+              "":""}
             </Stack>
           </Box>
         ) : null}
