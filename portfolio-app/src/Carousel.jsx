@@ -9,7 +9,7 @@ Carousel.propTypes = {
 }
 export default function Carousel({cards}){
     const [slideIndex, setSlideIndex] = useState(0)
-    return <HStack>
+    return <HStack  minH="400px"  width="550px">
         <IconButton aria-label="Go back" bgColor={"transparent"} _hover={{bg: useColorModeValue("gray.400", "gray.400")}} onClick={() => {
                 if(slideIndex == 0)
                     setSlideIndex(cards.length - 1)

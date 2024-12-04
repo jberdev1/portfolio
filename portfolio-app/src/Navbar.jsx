@@ -17,7 +17,8 @@ import { MenuContent, MenuItem, MenuRoot, MenuSeparator } from './components/ui/
 
 
 
-const Links = ['Mon Profil', 'Mes Projets']
+const Links = [
+  {name: 'Mon Profil', to: "/#profile"}, {name: 'Mes Projets', to: "/#projects"}]
 
 const NavLink = (props) => {
   const { children } = props
@@ -61,7 +62,7 @@ export default function Simple() {
             <Box>Portfolio</Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.name} smooth to={link.to}>{link.name}</NavLink>
               ))}
             </HStack>
           </HStack>
@@ -84,7 +85,7 @@ export default function Simple() {
               {Links.map((link) => {
                 console.log("opened")
                 return (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.name} smooth to={link.to}>{link.name}</NavLink>
               )})}
             </Stack>
           </Box>

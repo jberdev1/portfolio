@@ -20,12 +20,12 @@ function App() {
           <Text as={'span'} color={useColorModeValue('orange.400','orange.600')}>
             folio
           </Text></Heading>
-        <Heading size="2xl" mb={12} textDecoration={"underline 6px"} textDecorationColor={useColorModeValue('orange.400','orange.600')}>Mon Profil</Heading>
+        <Heading size="2xl" id="profile" mb={12} textDecoration={"underline 6px"} textDecorationColor={useColorModeValue('orange.400','orange.600')}>Mon Profil</Heading>
 
         <Center  w={"100%"} h="100%">
         <Profile/>
         </Center>
-        <Heading size="2xl" mt={12} mb={12} textDecoration={"underline 6px"} textDecorationColor={useColorModeValue('orange.400','orange.600')}>Mes Projets</Heading>
+        <Heading size="2xl" id="projects" mt={12} mb={12} textDecoration={"underline 6px"} textDecorationColor={useColorModeValue('orange.400','orange.600')}>Mes Projets</Heading>
         <Box 
             position={"fixed"}
             zIndex={-1}
