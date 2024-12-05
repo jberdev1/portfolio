@@ -1,4 +1,4 @@
-import { Box, Image, Stack, Card, Separator, Center, Text } from "@chakra-ui/react";
+import { Box, Image, Stack, Card, Separator, Center, Text, Container } from "@chakra-ui/react";
 import profile from "./assets/profile.jpg"
 import logoUtc from "./assets/logo_utc.png"
 import {  useColorModeValue } from './components/ui/color-mode';
@@ -28,12 +28,12 @@ export default function Profile(){
                         <Card.Title size={"3xl"}>Ingénieur en développement logiciel/<Text color={useColorModeValue('orange.400','orange.600') }as="span">web</Text></Card.Title>
                         <Card.Description mt={2} size={"3xl"} maxW={{md: "70%", base: "100%"}}>Ingénieur diplomé de l&apos;Université de Technologie de Compiègne en génie informatique, filière ingénierie des systèmes informatiques</Card.Description>
                         
-                        <Card.Description size={"3xl"} mt={2} maxW={{md: "70%", base: "100%"}}>Passionné par le développement et la guitare électrique</Card.Description>
+                        <Card.Description size={"3xl"} mt={2} maxW={{md: "70%", base: "100%"}}>Passionné par le développement, la vidéo et la guitare électrique</Card.Description>
                         <Center>
                             <Image mt="10%" mr="0" h="100px"  src={logoUtc}/>
                         </Center>
                     </Box>
-                    <Separator colorPalette={"green"} size={"lg"} orientation="vertical"/>
+                    <Separator colorPalette={"green"} size={"lg"} orientation="vertical" />
                     <Box ml={{base: "0px"}} minW="200px" display={{base: "none", md:"block"}}>
                         <Center>
                             <Image
@@ -44,6 +44,7 @@ export default function Profile(){
                                 alt="Profile picture"
                             />
                         </Center>
+                        
                     </Box>
                 </Stack>
             </Card.Body>
