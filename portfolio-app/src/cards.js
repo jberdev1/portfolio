@@ -11,9 +11,16 @@ import ch2 from "./assets/projects/chat/appli.png"
 import ch3 from "./assets/projects/chat/modif_salon.png"
 import ch4 from "./assets/projects/chat/connection.png"
 
+import l1 from "./assets/projects/laststand/laststand1.jpg"
+import l2 from "./assets/projects/laststand/laststand2.jpg"
 
+import ssp1 from "./assets/projects/ssp/ssp1.png"
+import ssp2 from "./assets/projects/ssp/ssp2.png"
+import ssp3 from "./assets/projects/ssp/ssp3.png"
 
 export const soundWaveCards = [s1, s2, s3]
 export const carcassonneCards = [c1, c2, c3]
 export const chatCards = [ch1, ch2, ch3, ch4]
+export const lastSTandCards = [l1, l2]
+export const sspCards = [ssp1, ssp2, ssp3]
 

@@ -11,8 +11,13 @@ import qtLogo from "./assets/logos/Qt.png"
 import bootLogo from "./assets/logos/bootstrap.png"
 import reactLogo from "./assets/logos/react.png"
 import springLogo from "./assets/logos/spring.jpg"
+import androidLogo from "./assets/logos/android-studio.png"
+import cssLogo from "./assets/logos/css.png"
+import htmlLogo from "./assets/logos/html.png"
+import phpLogo from "./assets/logos/php.png"
 
-import { soundWaveCards, chatCards, carcassonneCards } from "./cards";
+
+import { soundWaveCards, chatCards, carcassonneCards, lastSTandCards, sspCards } from "./cards";
 
 export default function Projects(){
 
@@ -180,5 +185,113 @@ export default function Projects(){
             </Center>
         </Stack>
     </VStack>
+
+
+    <VStack id="laststand" w={"100%"} minH={{base: "auto", md: "100vh"}} bgRepeat={"no-repeat"} bgColor={"black"}>
+        <Heading size={"4xl"} color={"white"} mt={8}>
+            Last Stand 2242
+        </Heading>
+        <Stack mt={8} minH={"70%"} flexDirection={{base: "column", md:"row"}}>
+            <Center ml={4}>
+                <Carousel cards={lastSTandCards}/>
+            </Center>
+            <Card.Root border={"none"} bgColor={"transparent"}  bgSize={"cover"} w={{base: "100%", md:"70%"}} maxW={{base: "100%", md:"70%"}}>
+                <Card.Header width="80%" filter="auto" backdropBlur="sm"  >
+                    <HStack  bgColor={"gray.800"}>
+                        <FaArrowRightLong color="white"/>
+                        <Card.Title as="span" color={"white"}>
+                            {`Jeu vidéo type "shooter" pour Android"`}
+                        </Card.Title>
+                    </HStack>
+                    
+                </Card.Header>
+                <Card.Body>
+                    <Container maxW="2xl" bgColor={"gray.800"} mt={4} >
+                        <Card.Title color={"white"} >Contexte</Card.Title>
+                        <Card.Description  color={"white"} whiteSpace={"pre-wrap"} textOverflow={"ellipsis"}>
+                            {`  Projet personnel réalisé pour apprendre le développement mobile sur Android`}
+                        </Card.Description>
+                    </Container>
+                    <Container  maxW="2xl" bgColor={"gray.800"} my={4} pt={2}>
+                        <Card.Title color={"white"} >Tâches réalisées</Card.Title>
+                        <Box as="ul" fontSize={"sm"} ml={8} listStyleType="circle" color={"white"} whiteSpace={"pre-wrap"} textOverflow={"ellipsis"}>
+                            <li>Création du moteur de jeu en multithreading, détection des collisions, des déplacements</li>
+                            <li>Création des ressources du jeu et de l&apos;interface</li>
+                            <li>Fonctionnalité d&apos;ajout de niveaux via des fichiers csv</li>
+                        </Box>
+                    </Container>
+                    <Container  maxW="2xl" bgColor={"gray.800"} pt={2} >
+                        <Card.Title color={"white"} >Technologies et Outils</Card.Title>
+                        <Card.Description  color={"white"} whiteSpace={"pre-wrap"} textOverflow={"ellipsis"}>
+                            <Flex  justify="space-between">
+                                <Card.Title fontSize={"sm"} color={"white"}>
+                                    {`  Java, Android Studio`}
+                                </Card.Title>
+                                <HStack>
+                                    <Image boxSize={"50px"} bgColor={"white"} src={javaLogo}></Image>
+                                    <Image boxSize={"50px"} bgColor={"white"} src={androidLogo}></Image>
+
+                                </HStack>
+                            </Flex>
+                        </Card.Description>
+                    </Container>
+                </Card.Body>
+            </Card.Root>
+        </Stack>
+    </VStack>
+
+    <VStack id="ssp" w={"100%"} minH={{base: "auto", md: "100vh"}} bgRepeat={"no-repeat"} bgColor={"red.800"}>
+        <Heading size={"4xl"} color={"white"} mt={8}>
+            Site web Sous Sol Productions
+        </Heading>
+        <Stack mt={8} minH={"70%"} flexDirection={{base: "column", md:"row"}}>
+            <Card.Root border={"none"} bgColor={"transparent"}  bgSize={"cover"} w={{base: "100%", md:"70%"}} maxW={{base: "100%", md:"70%"}}>
+                <Card.Header width="80%" filter="auto" backdropBlur="sm"  >
+                    <HStack  bgColor={"red.700"}>
+                        <FaArrowRightLong color="white"/>
+                        <Card.Title as="span" color={"white"}>
+                            Site web réalisé pour l&apos;association SSP
+                        </Card.Title>
+                    </HStack>
+                    
+                </Card.Header>
+                <Card.Body>
+                    <Container maxW="2xl" bgColor={"red.700"} mt={4} >
+                        <Card.Title color={"white"} >Contexte</Card.Title>
+                        <Card.Description  color={"white"} whiteSpace={"pre-wrap"} textOverflow={"ellipsis"}>
+                            {`  Site web "vitrine", réalisé pour l'association Sous Sol Productions, l'association de vidéo de l'UTC, spécialisée dans le cadrage, la réalisation et le montage vidéo pour la plupart des évenements et toutes les assocations de l'UTC`}
+                        </Card.Description>
+                    </Container>
+                    <Container  maxW="2xl" bgColor={"red.700"} my={4} pt={2}>
+                        <Card.Title color={"white"} >Tâches réalisées</Card.Title>
+                        <Box as="ul" fontSize={"sm"} ml={8} listStyleType="circle" color={"white"} whiteSpace={"pre-wrap"} textOverflow={"ellipsis"}>
+                            <li>Création des pages du site</li>
+                            <li>Connection avec l&apos;API Youtube pour la récupération des dernières vidéos de l&apos;association</li>
+                        </Box>
+                    </Container>
+                    <Container  maxW="2xl" bgColor={"red.700"} pt={2} >
+                        <Card.Title color={"white"} >Technologies et Outils</Card.Title>
+                        <Card.Description  color={"white"} whiteSpace={"pre-wrap"} textOverflow={"ellipsis"}>
+                            <Flex justify="space-between">
+                                <Card.Title fontSize={"sm"} color={"white"}>
+                                    {`  HTML, CSS, PHP`}
+                                </Card.Title>
+                                <HStack>
+                                    <Image boxSize={"50px"} objectFit={"contain"} bgColor={"white"} src={htmlLogo}></Image>
+                                    <Image boxSize={"50px"}  objectFit={"contain"} bgColor={"white"} src={cssLogo}></Image>
+                                    <Image boxSize={"50px"} bgColor={"white"} src={phpLogo}></Image>
+
+                                </HStack>
+                            </Flex>
+                        </Card.Description>
+                    </Container>
+                </Card.Body>
+            </Card.Root>
+            <Center ml={4}>
+                <Carousel cards={sspCards}/>
+            </Center>
+        </Stack>
+    </VStack>
+
 </Flex>
 }

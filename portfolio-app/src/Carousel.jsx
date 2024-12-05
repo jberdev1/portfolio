@@ -24,7 +24,7 @@ export default function Carousel({cards, dark}){
 
             {cards.map((val, i) => {
                 if(i == slideIndex)
-                    return [<Image key={i} src={val} objectFit={"cover"} animationName="fade-in" animationDuration="1s"/>]
+                    return [<Image h="400px"  width="550px" key={i} src={val} objectFit={"contain"} animationName="fade-in" animationDuration="1s"/>]
                     })}
         </Center>
         

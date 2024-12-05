@@ -16,10 +16,9 @@ import PropTypes from 'prop-types';
 import { RxHamburgerMenu  } from "react-icons/rx";
 import { IoMdClose  } from "react-icons/io";
 import { ColorModeButton, useColorModeValue } from './components/ui/color-mode';
-import { MenuContent, MenuItem, MenuRoot, MenuSeparator } from './components/ui/menu';
+import { MenuContent, MenuItem } from './components/ui/menu';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useState } from 'react';
-import { soundWaveCards } from './cards';
 
 
 
@@ -58,6 +57,8 @@ export default function Simple() {
     {name: "SoundWave", to: "#soundwave"},
     {name: "Chat", to: "#chat"},
     {name: "Carcassonne", to: "#carcassonne"},
+    {name: "Last Stand 2242", to: "#laststand"},
+    {name: "Site web SSP", to: "#ssp"},
 
   ]
 
@@ -72,7 +73,7 @@ export default function Simple() {
             onClick={open ? onClose : onOpen}
           >{open ? <IoMdClose /> : <RxHamburgerMenu  />}</IconButton>
           <HStack gap={6} width="100%" alignItems={'center'}>
-            <Box>Portfolio</Box>
+            <Box pl={3}>Portfolio</Box>
             <Separator orientation={"vertical"} height="4"></Separator>
 
             <HStack as={'nav'} gap={6} display={{ base: 'none', md: 'flex' }}>
@@ -83,7 +84,7 @@ export default function Simple() {
                   </MenuTrigger>
                   <MenuContent >
                     {projects.map((val, i) => (
-                      <MenuItem _hover={{bgColor: "gray.200"}}>
+                      <MenuItem key={i} _hover={{bgColor: "gray.200"}}>
                         <AnchorLink value="sw" href={val.to}>{val.name}</AnchorLink>
                       </MenuItem>)
                     )}
@@ -101,6 +102,10 @@ export default function Simple() {
               <AnchorLink _focus={{bgColor:"black"}} href="#menu" onClick={() => {setSubMenuOpen(!subMenuOpen)}}>Mes projets</AnchorLink>
               {subMenuOpen ? 
               "":""}
+              {projects.map((val, i) => (
+                        <AnchorLink key={i} value="sw" href={val.to}><Box _hover={{bgColor:"black"}} pl={5}>{val.name}</Box></AnchorLink>
+                      )
+                    )}
             </Stack>
           </Box>
         ) : null}
