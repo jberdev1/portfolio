@@ -23,7 +23,7 @@ export default function Projects(){
 
 
     return <Flex direction={"column"} w="100%">
-    <VStack id="soundwave" w={"100%"} minH={{base: "auto", md: "100vh"}} bgRepeat={"no-repeat"} bgColor={"purple.900"}>
+    <VStack id="soundwave" w={"100%"}  bgRepeat={"no-repeat"} bgColor={"purple.900"}>
         <Heading size={"4xl"} color={"white"} mt={8}>
             SoundWave
         </Heading>
@@ -79,7 +79,7 @@ export default function Projects(){
 
 
 
-    <VStack id="chat" w={"100%"} minH={{base: "auto", md: "100vh"}} bgRepeat={"no-repeat"} bgColor={"blue.800"}>
+    <VStack id="chat" w={"100%"} bgRepeat={"no-repeat"} bgColor={"blue.800"}>
         <Heading size={"4xl"} color={"white"} mt={8}>
             Application de chat
         </Heading>
@@ -135,7 +135,7 @@ export default function Projects(){
         </Stack>
     </VStack>
 
-    <VStack id="carcassonne" w={"100%"} minH={{base: "auto", md: "100vh"}} bgRepeat={"no-repeat"} bgColor={"yellow.300"}>
+    <VStack id="carcassonne" w={"100%"} bgRepeat={"no-repeat"} bgColor={"yellow.300"}>
         <Heading size={"4xl"} color={"black"} mt={8}>
             Carcassonne
         </Heading>
@@ -187,7 +187,7 @@ export default function Projects(){
     </VStack>
 
 
-    <VStack id="laststand" w={"100%"} minH={{base: "auto", md: "100vh"}} bgRepeat={"no-repeat"} bgColor={"black"}>
+    <VStack id="laststand" w={"100%"}  bgRepeat={"no-repeat"} bgColor={"black"}>
         <Heading size={"4xl"} color={"white"} mt={8}>
             Last Stand 2242
         </Heading>
@@ -240,7 +240,7 @@ export default function Projects(){
         </Stack>
     </VStack>
 
-    <VStack id="ssp" w={"100%"} minH={{base: "auto", md: "100vh"}} bgRepeat={"no-repeat"} bgColor={"red.800"}>
+    <VStack id="ssp" w={"100%"} bgRepeat={"no-repeat"} bgColor={"red.800"}>
         <Heading size={"4xl"} color={"white"} mt={8} textAlign={"center"}>
             Site web Sous Sol Productions
         </Heading>
