@@ -10,7 +10,7 @@ Carousel.propTypes = {
 }
 export default function Carousel({cards, dark}){
     const [slideIndex, setSlideIndex] = useState(0)
-    return <HStack  minH="400px"  width="550px">
+    return <HStack>
         <IconButton aria-label="Go back" bgColor={"transparent"} _hover={{bg: useColorModeValue("gray.400", "gray.400")}} onClick={() => {
                 if(slideIndex == 0)
                     setSlideIndex(cards.length - 1)
@@ -20,11 +20,11 @@ export default function Carousel({cards, dark}){
         }>
         <IoIosArrowBack color={dark ? "black" : "white"} />
         </IconButton>
-        <Center heigth="350px"  width="500px">
+        <Center>
 
             {cards.map((val, i) => {
                 if(i == slideIndex)
-                    return [<Image h="400px"  width="550px" key={i} src={val} objectFit={"contain"} animationName="fade-in" animationDuration="1s"/>]
+                    return [<Image h={{base: "300px", md: "400px" }} width={{base: "300px", md: "550px"}} key={i} src={val} objectFit={"contain"} animationName="fade-in" animationDuration="1s"/>]
                     })}
         </Center>
         
