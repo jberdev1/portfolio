@@ -18,7 +18,7 @@ export default function Profile(){
                                 fit="cover"
                                 alt="Profile picture"
                             />
-                        </Center>
+                         </Center>
                     </Box>
             </Card.Header>
 
