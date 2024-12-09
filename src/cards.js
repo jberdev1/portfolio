@@ -20,7 +20,7 @@ import ssp3 from "./assets/projects/ssp/ssp3.png"
 
 export const soundWaveCards = [s1, s2, s3]
 export const carcassonneCards = [c1, c2, c3]
-export const chatCards = [ch1, ch2, ch3, ch4]
+export const chatCards = [ch2, ch1, ch3, ch4]
 export const lastSTandCards = [l1, l2]
 export const sspCards = [ssp1, ssp2, ssp3]
 
